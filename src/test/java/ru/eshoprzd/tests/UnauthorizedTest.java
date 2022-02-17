@@ -1,6 +1,7 @@
 package ru.eshoprzd.tests;
 
 import com.codeborne.selenide.selector.WithText;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -74,6 +75,13 @@ public class UnauthorizedTest extends BaseTest{
         new MainPage().openPrivacyFromFooter();
         $(withText("Настоящим в соответствии с Федеральным законом от 27 июля 2006 года № 152 «О персональных данных»")).should(appear);
         $("a[href*='privacy'").shouldBe(visible);
+    }
+
+    @Disabled
+    @DisplayName("Пропущенный тест")
+    @Test
+    public void skippedTest(){
+        System.out.println("Тест пропущен");
     }
 
 }
