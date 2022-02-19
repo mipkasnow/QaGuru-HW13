@@ -80,6 +80,7 @@ public class UnauthorizedTest extends BaseTest{
     }
 
     @Disabled
+    @Tag("regress")
     @DisplayName("Пропущенный тест")
     @Test
     public void skippedTest(){
