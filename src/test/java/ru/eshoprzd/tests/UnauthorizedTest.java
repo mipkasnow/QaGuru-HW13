@@ -16,6 +16,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static ru.eshoprzd.data.Data.*;
 
 @DisplayName("Проверка элементов открытой части сайта")
@@ -65,6 +66,7 @@ public class UnauthorizedTest extends BaseTest{
         $(byText("Не найдено имя пользователя или пароль")).should(appear);
     }
 
+    @Tag("regress")
     @DisplayName("Проверка ссылок подвала")
     @Test
     public void checkFooterLinks(){
@@ -82,6 +84,14 @@ public class UnauthorizedTest extends BaseTest{
     @Test
     public void skippedTest(){
         System.out.println("Тест пропущен");
+    }
+
+
+    @Tag("regress")
+    @DisplayName("Упавший тест")
+    @Test
+    public void failedTest(){
+        assertTrue(false);
     }
 
 }
